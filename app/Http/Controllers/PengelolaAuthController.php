@@ -29,4 +29,12 @@ class PengelolaAuthController extends Controller
 
         return redirect()->route('login-pengelola');
     }
+
+    public function logout(Request $request)
+    {
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        Auth::logout();
+        return redirect()->route('login-pengelola');
+    }
 }
