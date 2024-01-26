@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PengelolaAuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +23,5 @@ Route::post('/athenticate-pengelola', [PengelolaAuthController::class, 'authenti
 Route::get('/logout-pengelola', [PengelolaAuthController::class, 'logout'])->name('logout-pengelola');
 
 Route::middleware(['isPengelola'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });

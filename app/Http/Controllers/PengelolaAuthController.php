@@ -24,6 +24,7 @@ class PengelolaAuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             if (Auth::user()) {
+                return redirect()->route('dashboard');
             }
         }
 
