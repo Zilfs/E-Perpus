@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    E-Perpus | Login
+    E-Perpus | Login - Petugas
 @endsection
 @section('content')
     <div class="page-header min-vh-100">
@@ -36,7 +36,7 @@
                         <div class="card-footer text-center pt-0 px-lg-2 px-1">
                             <p class="mb-4 text-sm mx-auto" data-aos="fade-down" data-aos-delay="600">
                                 Don't have an account?
-                                <a href="javascript:;" class="text-primary font-weight-bold">Sign
+                                <a href="{{ route('register') }}" class="text-primary font-weight-bold">Sign
                                     up</a>
                             </p>
                         </div>
