@@ -18,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/login-pengelola', [PengelolaAuthController::class, 'index'])->name('login-pengelola');
+Route::post('/athenticate-pengelola', [PengelolaAuthController::class, 'authenticate'])->name('authenticate-pengelola');
+
+Route::middleware(['isPengelola'])->group(function () {
+});
