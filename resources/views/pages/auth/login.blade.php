@@ -33,11 +33,17 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                            <p class="mb-4 text-sm mx-auto" data-aos="fade-down" data-aos-delay="600">
+                        <div class="text-center pt-0 px-lg-2 px-1">
+                            <p class="text-sm mx-auto" data-aos="fade-down" data-aos-delay="600">
                                 Don't have an account?
                                 <a href="{{ route('register') }}" class="text-primary font-weight-bold">Sign
                                     up</a>
+                            </p>
+                        </div>
+                        <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                            <p class="mb-4 text-sm mx-auto" data-aos="fade-down" data-aos-delay="800">
+                                <a href="{{ route('login-pengelola') }}" class="text-primary font-weight-bold">Masuk</a>
+                                Sebagai pengelola
                             </p>
                         </div>
                     </div>
