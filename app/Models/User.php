@@ -45,4 +45,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function koleksi_pribadi()
+    {
+        return $this->hasMany(KoleksiPribadi::class, 'user_id', 'id');
+    }
 }

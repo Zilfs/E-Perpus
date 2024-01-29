@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+    Dashboard Pengelola
+@endsection
+
 @section('content')
     <div class="container-fluid py-4">
         <div class="row">
