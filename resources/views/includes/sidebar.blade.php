@@ -9,7 +9,7 @@
         </a>
     </div>
     <hr class="horizontal dark mt-0">
-    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+    <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
         @if (Auth::user()->role == 'ADMIN')
             <ul class="navbar-nav">
                 <li class="nav-item" data-aos="fade-right" data-aos-delay="200">

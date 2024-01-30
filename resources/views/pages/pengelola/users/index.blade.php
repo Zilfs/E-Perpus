@@ -61,18 +61,15 @@
                                                     data-toggle="tooltip" data-original-title="Edit user">
                                                     Edit
                                                 </a>
-                                                <form action="{{ route('user.destroy', $item->id) }}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit"
-                                                        class="btn btn-danger btn-sm font-weight-bold text-xs mt-4"
-                                                        data-toggle="tooltip" data-original-title="Edit user">
-                                                        Hapus
-                                                    </button>
-                                                </form>
-
+                                                <a href=""
+                                                    class="btn btn-danger btn-sm font-weight-bold text-xs mt-4"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#deleteModal{{ $item->id }} ">
+                                                    Hapus
+                                                </a>
                                             </td>
                                         </tr>
+
                                     @empty
                                         Data Not Found
                                     @endforelse
@@ -84,4 +81,34 @@
             </div>
         </div>
     </div>
+
+    @forelse ($data as $item)
+        <div class="modal fade" id="deleteModal{{ $item->id }}" tabindex="-1" aria-labelledby="deleteModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 250px">
+                            <i class="fa-solid fa-exclamation fa-bounce fa-2xl h-75" style="color: #ea2e2e;"></i>
+                        </div>
+
+                        <div class="text-center">
+                            <h4>Yakin ingin menghapus data ini?</h4>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ngga jadi</button>
+                        <form action="{{ route('user.destroy', $item->id) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    @empty
+        Data Not Found
+    @endforelse
 @endsection
