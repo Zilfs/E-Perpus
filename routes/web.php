@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PengelolaAuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +25,8 @@ Route::get('/logout-pengelola', [PengelolaAuthController::class, 'logout'])->nam
 
 Route::middleware(['isPengelola'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
+
+Route::middleware(['isAdmin'])->group(function () {
+    Route::get('/data-users', [UserController::class, 'index'])->name('user-index');
 });
