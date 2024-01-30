@@ -8,7 +8,7 @@
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                <div class="card">
+                <div class="card" data-aos="fade-down">
                     <div class="card-body p-3">
                         <div class="row">
                             <div class="col-8">
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                <div class="card">
+                <div class="card" data-aos="fade-down" data-aos-delay="100">
                     <div class="card-body p-3">
                         <div class="row">
                             <div class="col-8">
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                <div class="card">
+                <div class="card" data-aos="fade-down" data-aos-delay="200">
                     <div class="card-body p-3">
                         <div class="row">
                             <div class="col-8">
@@ -71,7 +71,7 @@
                 </div>
             </div>
             <div class="col-xl-3 col-sm-6">
-                <div class="card">
+                <div class="card" data-aos="fade-down" data-aos-delay="300">
                     <div class="card-body p-3">
                         <div class="row">
                             <div class="col-8">
@@ -94,7 +94,7 @@
         </div>
         <div class="row mt-4">
             <div class="col-lg-7 mb-lg-0 mb-4">
-                <div class="card ">
+                <div class="card" data-aos="fade-down" data-aos-delay="400">
                     <div class="card-header pb-0 p-3">
                         <div class="d-flex justify-content-between">
                             <h6 class="mb-2">Sales by Country</h6>
@@ -233,7 +233,7 @@
                 </div>
             </div>
             <div class="col-lg-5">
-                <div class="card">
+                <div class="card" data-aos="fade-down" data-aos-delay="500">
                     <div class="card-header pb-0 p-3">
                         <h6 class="mb-0">Categories</h6>
                     </div>

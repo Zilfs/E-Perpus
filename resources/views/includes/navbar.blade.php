@@ -1,7 +1,7 @@
 <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur"
     data-scroll="false">
     <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb" data-aos="fade-right">
             <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                 <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
                 <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
@@ -15,8 +15,9 @@
             <ul class="navbar-nav  justify-content-end">
                 <li class="nav-item d-flex align-items-center">
                     <div class="nav-link text-white font-weight-bold px-0">
-                        <i class="fa fa-user me-sm-1"></i>
-                        <span class="d-sm-inline d-none">{{ Auth::user()->username }}</span>
+                        <i class="fa fa-user me-sm-1" data-aos="fade-right" data-aos-delay="200"></i>
+                        <span class="d-sm-inline d-none" data-aos="fade-right"
+                            data-aos-delay="300">{{ Auth::user()->username }}</span>
                     </div>
                 </li>
                 <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -28,7 +29,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="nav-item px-3 d-flex align-items-center">
+                <li class="nav-item px-3 d-flex align-items-center" data-aos="fade-right" data-aos-delay="300">
                     <a href="javascript:;" class="nav-link text-white p-0">
                         <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
                     </a>

@@ -4,7 +4,7 @@
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
-                <div class="card mb-4">
+                <div class="card mb-4" data-aos="fade-down" data-aos-duration="500">
                     <div class="card-header pb-0 d-flex w-100">
                         <h6 class="w-50">Data Pengguna</h6>
                         <div class="d-flex justify-content-end w-50">

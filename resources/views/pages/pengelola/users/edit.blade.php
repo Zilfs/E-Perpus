@@ -4,7 +4,7 @@
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card" data-aos="fade-down" data-aos-duration="500">
                     <div class="card-header pb-0">
                         <div class="d-flex align-items-center mt-2">
                             <p class="fw-bold">Edit User</p>

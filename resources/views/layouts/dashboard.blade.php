@@ -19,6 +19,8 @@
     <link href="/template/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="/template/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+    <!-- AOS Files -->
+    <link id="" href="/aos-master/dist/aos.css" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -61,6 +63,10 @@
             </div>
         </div>
     </div>
+    <script src="/aos-master/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <!--   Core JS Files   -->
     <script src="/template/assets/js/core/popper.min.js"></script>
     <script src="/template/assets/js/core/bootstrap.min.js"></script>
