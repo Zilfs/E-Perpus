@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.pengelola.users.add');
     }
 
     /**
@@ -31,7 +31,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create(
+            [
+                'username' => $request->username,
+                'email' => $request->email,
+                'password' => bcrypt($request->password),
+                'nama_lengkap' => $request->nama_lengkap,
+                'role' => $request->role,
+                'alamat' => $request->alamat,
+            ]
+        );
+
+        return redirect()->route('user-index');
     }
 
     /**

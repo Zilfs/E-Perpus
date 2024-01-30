@@ -8,9 +8,8 @@
                     <div class="card-header pb-0 d-flex w-100">
                         <h6 class="w-50">Data Pengguna</h6>
                         <div class="d-flex justify-content-end w-50">
-                            <a href="" class="btn btn-primary btn-sm"><i class="fa fa-solid fa-plus me-3"></i>Tambah
-                                Data
-                                User</a>
+                            <a href="{{ route('create-user') }}" class="btn btn-primary btn-sm"><i
+                                    class="fa fa-solid fa-plus me-3"></i>Tambah Data User</a>
                         </div>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
