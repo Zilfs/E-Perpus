@@ -29,6 +29,7 @@
         @include('includes.navbar')
         <!-- End Navbar -->
         @yield('content')
+        @include('includes.footer')
     </main>
     <div class="fixed-plugin">
         <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
