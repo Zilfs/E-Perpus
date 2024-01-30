@@ -61,11 +61,16 @@
                                                     data-toggle="tooltip" data-original-title="Edit user">
                                                     Edit
                                                 </a>
-                                                <a href="javascript:;"
-                                                    class="btn btn-danger btn-sm font-weight-bold text-xs mt-4"
-                                                    data-toggle="tooltip" data-original-title="Edit user">
-                                                    Hapus
-                                                </a>
+                                                <form action="{{ route('user.destroy', $item->id) }}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit"
+                                                        class="btn btn-danger btn-sm font-weight-bold text-xs mt-4"
+                                                        data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </button>
+                                                </form>
+
                                             </td>
                                         </tr>
                                     @empty

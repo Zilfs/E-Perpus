@@ -42,7 +42,7 @@ class UserController extends Controller
             ]
         );
 
-        return redirect()->route('user-index');
+        return redirect()->route('user.index');
     }
 
     /**
@@ -75,7 +75,7 @@ class UserController extends Controller
 
         $item->update($data);
 
-        return redirect()->route('user-index');
+        return redirect()->route('user.index');
     }
 
     /**
@@ -87,6 +87,6 @@ class UserController extends Controller
 
         $item->delete();
 
-        return redirect()->route('user-index');
+        return redirect()->route('user.index');
     }
 }
