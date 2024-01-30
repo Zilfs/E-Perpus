@@ -109,6 +109,5 @@
             </div>
         </div>
     @empty
-        Data Not Found
     @endforelse
 @endsection
