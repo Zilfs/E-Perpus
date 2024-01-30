@@ -13,7 +13,7 @@
         @if (Auth::user()->role == 'ADMIN')
             <ul class="navbar-nav">
                 <li class="nav-item" data-aos="fade-right" data-aos-delay="200">
-                    <a class="nav-link" href="{{ route('user-index') }}">
+                    <a class="nav-link" href="{{ route('user.index') }}">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>

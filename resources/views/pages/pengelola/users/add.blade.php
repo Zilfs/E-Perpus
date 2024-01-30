@@ -8,11 +8,11 @@
                     <div class="card-header pb-0">
                         <div class="d-flex align-items-center mt-2">
                             <p class="fw-bold">Buat User Baru</p>
-                            <a href="{{ route('user-index') }}" class="btn btn-primary btn-sm ms-auto">Kembali</a>
+                            <a href="{{ route('user.index') }}" class="btn btn-primary btn-sm ms-auto">Kembali</a>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form class="row" action="{{ route('add-user') }}" method="POST">
+                        <form class="row" action="{{ route('user.store') }}" method="POST">
                             @csrf
                             <div class="col-md-6">
                                 <div class="form-group">

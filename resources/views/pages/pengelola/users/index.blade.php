@@ -8,7 +8,7 @@
                     <div class="card-header pb-0 d-flex w-100">
                         <h6 class="w-50">Data Pengguna</h6>
                         <div class="d-flex justify-content-end w-50">
-                            <a href="{{ route('create-user') }}" class="btn btn-primary btn-sm"><i
+                            <a href="{{ route('user.create') }}" class="btn btn-primary btn-sm"><i
                                     class="fa fa-solid fa-plus me-3"></i>Tambah Data User</a>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                                                     class="text-secondary text-xs font-weight-bold">{{ $item->alamat }}</span>
                                             </td>
                                             <td class="d-flex justify-content-center">
-                                                <a href="{{ route('edit-user', $item->id) }}"
+                                                <a href="{{ route('user.edit', $item->id) }}"
                                                     class="btn btn-warning btn-sm font-weight-bold text-xs me-2 mt-4"
                                                     data-toggle="tooltip" data-original-title="Edit user">
                                                     Edit
