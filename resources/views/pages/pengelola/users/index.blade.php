@@ -56,7 +56,7 @@
                                                     class="text-secondary text-xs font-weight-bold">{{ $item->alamat }}</span>
                                             </td>
                                             <td class="d-flex justify-content-center">
-                                                <a href="javascript:;"
+                                                <a href="{{ route('edit-user', $item->id) }}"
                                                     class="btn btn-warning btn-sm font-weight-bold text-xs me-2 mt-4"
                                                     data-toggle="tooltip" data-original-title="Edit user">
                                                     Edit

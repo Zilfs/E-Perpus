@@ -58,7 +58,11 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $item = User::findOrFail($id);
+
+        return view('pages.pengelola.users.edit', [
+            'item' => $item,
+        ]);
     }
 
     /**
@@ -66,7 +70,12 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $item = User::findOrFail($id);
+        $data = $request->all();
+
+        $item->update($data);
+
+        return redirect()->route('user-index');
     }
 
     /**
