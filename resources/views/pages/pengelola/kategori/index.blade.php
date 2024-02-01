@@ -46,9 +46,9 @@
                                                     class="text-secondary text-xs font-weight-bold">{{ $item->nama_kategori }}</span>
                                             </td>
                                             <td class="d-flex justify-content-center">
-                                                <a href="{{ route('user.edit', $item->id) }}"
+                                                <a href="{{ route('kategori-buku.edit', $item->id) }}"
                                                     class="btn btn-warning btn-sm font-weight-bold text-xs me-2 mt-4"
-                                                    data-toggle="tooltip" data-original-title="Edit user">
+                                                    data-toggle="tooltip" data-original-title="Edit Kategori Buku">
                                                     Edit
                                                 </a>
                                                 <a href=""

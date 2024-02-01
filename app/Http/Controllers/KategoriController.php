@@ -52,7 +52,11 @@ class KategoriController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $item = KategoriBuku::findOrFail($id);
+
+        return view('pages.pengelola.kategori.edit', [
+            'item' => $item,
+        ]);
     }
 
     /**
@@ -60,7 +64,12 @@ class KategoriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $item = KategoriBuku::findOrFail($id);
+        $data = $request->all();
+
+        $item->update($data);
+
+        return redirect()->route('kategori-buku.index');
     }
 
     /**
