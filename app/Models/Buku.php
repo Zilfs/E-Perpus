@@ -22,7 +22,7 @@ class Buku extends Model
 
     public function kategori_buku_relasi()
     {
-        return $this->hasMany(KategoriBukuRelasi::class, 'buku_id', 'id');
+        return $this->hasOne(KategoriBukuRelasi::class, 'buku_id', 'id');
     }
 
     public function koleksi_pribadi()

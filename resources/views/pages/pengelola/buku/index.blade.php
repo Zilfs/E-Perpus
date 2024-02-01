@@ -12,7 +12,7 @@
                     <div class="card-header pb-0 d-flex w-100">
                         <h6 class="w-50">Data Buku</h6>
                         <div class="d-flex justify-content-end w-50">
-                            <a href="{{ route('kategori-buku.create') }}" class="btn btn-primary btn-sm me-3"><i
+                            <a href="{{ route('buku.create') }}" class="btn btn-primary btn-sm me-3"><i
                                     class="fa fa-solid fa-plus me-3"></i>Tambah Data Buku</a>
                             <a href="" class="btn btn-success btn-sm"><i
                                     class="fa-solid fa-file-export me-3"></i>Buat

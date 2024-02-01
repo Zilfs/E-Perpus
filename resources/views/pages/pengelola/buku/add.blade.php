@@ -11,17 +11,45 @@
                 <div class="card" data-aos="fade-down" data-aos-duration="500">
                     <div class="card-header pb-0">
                         <div class="d-flex align-items-center mt-2">
-                            <p class="fw-bold">Buat Kategori Baru</p>
-                            <a href="{{ route('kategori-buku.index') }}" class="btn btn-primary btn-sm ms-auto">Kembali</a>
+                            <p class="fw-bold">Tambahkan Buku Baru</p>
+                            <a href="{{ route('buku.index') }}" class="btn btn-primary btn-sm ms-auto">Kembali</a>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form class="row" action="{{ route('kategori-buku.store') }}" method="POST">
+                        <form class="row" action="{{ route('buku.store') }}" method="POST">
                             @csrf
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">Nama Kategori Buku</label>
-                                    <input class="form-control" type="text" required name="nama_kategori">
+                                    <label for="example-text-input" class="form-control-label">Nama Buku</label>
+                                    <input class="form-control" type="text" required name="judul">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Kategori</label>
+                                    <select class="form-control" required name="kategori" id="">
+                                        @foreach ($data as $item)
+                                            <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Penulis</label>
+                                    <input class="form-control" type="text" required name="penulis">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Penerbit</label>
+                                    <input class="form-control" type="text" required name="penerbit">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Tahun Terbit</label>
+                                    <input class="form-control" type="text" required name="tahun_terbit">
                                 </div>
                             </div>
                             <div class="col-md-12">
