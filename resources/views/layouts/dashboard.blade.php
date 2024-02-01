@@ -15,7 +15,7 @@
     <link href="/template/assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="/template/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="/fontawesome/js/all.min.js" crossorigin="anonymous"></script>
     <link href="/template/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="/template/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
