@@ -88,7 +88,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ngga jadi</button>
-                        <form action="{{ route('user.destroy', $item->id) }}" method="POST">
+                        <form action="{{ route('kategori-buku.destroy', $item->id) }}" method="POST">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-danger">Hapus</button>

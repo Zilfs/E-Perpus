@@ -77,6 +77,10 @@ class KategoriController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $item = KategoriBuku::findOrFail($id);
+
+        $item->delete();
+
+        return redirect()->route('kategori-buku.index');
     }
 }
