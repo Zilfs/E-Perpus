@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PengelolaAuthController;
@@ -26,9 +27,10 @@ Route::get('/logout-pengelola', [PengelolaAuthController::class, 'logout'])->nam
 
 Route::middleware(['isPengelola'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/kategori-buku', KategoriController::class);
+    Route::resource('/buku', BukuController::class);
 });
 
 Route::middleware(['isAdmin'])->group(function () {
     Route::resource('/user', UserController::class);
-    Route::resource('/kategori-buku', KategoriController::class);
 });
