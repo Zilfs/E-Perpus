@@ -16,14 +16,47 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form class="row" action="{{ route('kategori-buku.update', $item->id) }}" method="POST">
-                            @csrf
+                        <form class="row" action="{{ route('buku.update', $item->id) }}" method="POST">
                             @method('PUT')
-                            <div class="col-md-12">
+                            @csrf
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">Nama Kategori Buku</label>
-                                    <input class="form-control" type="text" required name="nama_kategori"
-                                        value="{{ $item->nama_kategori }}">
+                                    <label for="example-text-input" class="form-control-label">Nama Buku</label>
+                                    <input class="form-control" type="text" required name="judul"
+                                        value="{{ $item->judul }}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Kategori</label>
+                                    <select class="form-control" required name="kategori" id="">
+                                        @foreach ($data as $kategori)
+                                            <option value="{{ $kategori->id }}"
+                                                {{ $item->kategori_buku_relasi->kategori->id == $kategori->id ? 'selected' : '' }}>
+                                                {{ $kategori->nama_kategori }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Penulis</label>
+                                    <input class="form-control" type="text" required name="penulis"
+                                        value="{{ $item->penulis }}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Penerbit</label>
+                                    <input class="form-control" type="text" required name="penerbit"
+                                        value="{{ $item->penerbit }}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Tahun Terbit</label>
+                                    <input class="form-control" type="text" required name="tahun_terbit"
+                                        value="{{ $item->tahun_terbit }}">
                                 </div>
                             </div>
                             <div class="col-md-12">

@@ -15,7 +15,7 @@ class BukuController extends Controller
     public function index()
     {
         $data = Buku::with('kategori_buku_relasi.kategori')->get();
-        // dd($data);
+
         return view('pages.pengelola.buku.index', [
             'data' => $data,
         ]);
@@ -65,7 +65,13 @@ class BukuController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $item = Buku::with('kategori_buku_relasi.kategori')->where('id', $id)->first();
+        $data = KategoriBuku::all();
+
+        return view('pages.pengelola.buku.edit', [
+            'item' => $item,
+            'data' => $data,
+        ]);
     }
 
     /**
@@ -73,7 +79,16 @@ class BukuController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $item = Buku::findOrFail($id);
+        $data = $request->except('kategori');
+        $kategori = KategoriBukuRelasi::where('buku_id', $id)->first();
+
+        $item->update($data);
+        $kategori->update([
+            'kategori_id' => $request->kategori
+        ]);
+
+        return redirect()->route('buku.index');
     }
 
     /**
