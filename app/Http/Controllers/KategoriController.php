@@ -24,7 +24,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.pengelola.kategori.add');
     }
 
     /**
@@ -32,7 +32,11 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        KategoriBuku::create($data);
+
+        return redirect()->route('kategori-buku.index');
     }
 
     /**

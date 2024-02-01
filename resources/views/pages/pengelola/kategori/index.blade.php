@@ -12,7 +12,7 @@
                     <div class="card-header pb-0 d-flex w-100">
                         <h6 class="w-50">Data Kategori Buku</h6>
                         <div class="d-flex justify-content-end w-50">
-                            <a href="{{ route('user.create') }}" class="btn btn-primary btn-sm"><i
+                            <a href="{{ route('kategori-buku.create') }}" class="btn btn-primary btn-sm"><i
                                     class="fa fa-solid fa-plus me-3"></i>Tambah Data Kategori Buku</a>
                         </div>
                     </div>
@@ -21,10 +21,11 @@
                             <table class="table align-items-center mb-0">
                                 <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                             #</th>
                                         <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 text-center">
                                             Nama Kategori</th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -38,7 +39,7 @@
                                     @forelse ($data as $item)
                                         <tr>
                                             <td>
-                                                <p class="text-xs font-weight-bold mb-0">{{ $no++ }}</p>
+                                                <p class="text-xs font-weight-bold mb-0 text-center">{{ $no++ }}</p>
                                             </td>
                                             <td class="align-middle text-center">
                                                 <span
