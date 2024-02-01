@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PengelolaAuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,5 @@ Route::middleware(['isPengelola'])->group(function () {
 
 Route::middleware(['isAdmin'])->group(function () {
     Route::resource('/user', UserController::class);
+    Route::resource('/kategori-buku', KategoriController::class);
 });

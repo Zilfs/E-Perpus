@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    Dashboard | Edit Pengguna
+    Dashboard | Edit Kategori Buku
 @endsection
 
 @section('content')
