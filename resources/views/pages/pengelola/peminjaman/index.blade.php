@@ -71,10 +71,6 @@
                                                 {{ $item->tanggal_dikembalikan }}</span>
                                         </div>
                                     </div>
-                                    <div
-                                        class="d-flex align-items-center text-danger text-gradient text-sm font-weight-bold">
-                                        - $ 2,500
-                                    </div>
                                 </li>
                             @empty
                                 <p class="ms-5 text-warning fw-bold">Data Tidak Temukan</p>
@@ -95,10 +91,6 @@
                                             <span class="text-xs">{{ $item->user->nama_lengkap }}</span>
                                             <span class="text-xs">{{ $item->user->email }}</span>
                                         </div>
-                                    </div>
-                                    <div
-                                        class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
-                                        + $ 750
                                     </div>
                                 </li>
                             @empty
