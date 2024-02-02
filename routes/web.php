@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PengelolaAuthController;
@@ -23,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/sign-up', [AuthController::class, 'sign_up'])->name('sign-up');
+Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 Route::get('/login-pengelola', [PengelolaAuthController::class, 'index'])->name('login-pengelola');
 Route::post('/athenticate-pengelola', [PengelolaAuthController::class, 'authenticate'])->name('authenticate-pengelola');
 Route::get('/logout-pengelola', [PengelolaAuthController::class, 'logout'])->name('logout-pengelola');
@@ -39,4 +41,8 @@ Route::middleware(['isAdmin'])->group(function () {
 
 Route::middleware(['isPetugas'])->group(function () {
     Route::resource('/peminjaman', PeminjamanController::class);
+});
+
+Route::middleware(['isPeminjam'])->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 });

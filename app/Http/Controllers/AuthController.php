@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -29,5 +30,20 @@ class AuthController extends Controller
         ]);
 
         return redirect()->route('login');
+    }
+
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            if (Auth::user() && Auth::user()->role == 'PEMINJAM') {
+                return redirect()->route('home');
+            }
+        }
     }
 }

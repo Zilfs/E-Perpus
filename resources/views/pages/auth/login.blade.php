@@ -14,21 +14,22 @@
                                 in</p>
                         </div>
                         <div class="card-body">
-                            <form role="form">
+                            <form role="form" action="{{ route('authenticate') }}" method="POST">
+                                @csrf
                                 <div class="mb-3" data-aos="fade-down" data-aos-delay="200">
                                     <input type="email" class="form-control form-control-lg" placeholder="Email"
-                                        aria-label="Email">
+                                        aria-label="Email" name="email">
                                 </div>
                                 <div class="mb-3" data-aos="fade-down" data-aos-delay="300">
-                                    <input type="email" class="form-control form-control-lg" placeholder="Password"
-                                        aria-label="Password">
+                                    <input type="password" class="form-control form-control-lg" placeholder="Password"
+                                        aria-label="Password" name="password">
                                 </div>
                                 <div class="form-check form-switch" data-aos="fade-down" data-aos-delay="400">
                                     <input class="form-check-input" type="checkbox" id="rememberMe">
                                     <label class="form-check-label" for="rememberMe">Remember me</label>
                                 </div>
                                 <div class="text-center" data-aos="fade-down" data-aos-delay="500">
-                                    <button type="button" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign
+                                    <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign
                                         in</button>
                                 </div>
                             </form>

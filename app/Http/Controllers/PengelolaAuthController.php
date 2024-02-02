@@ -23,7 +23,7 @@ class PengelolaAuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            if (Auth::user()) {
+            if (Auth::user() && Auth::user()->role == 'ADMIN' || Auth::user()->role == 'PETUGAS') {
                 return redirect()->route('dashboard');
             }
         }
