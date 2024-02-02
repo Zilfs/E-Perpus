@@ -21,30 +21,31 @@
                             <p class="mb-0" data-aos="fade-down" data-aos-delay="100">Create account</p>
                         </div>
                         <div class="card-body">
-                            <form role="form">
+                            <form role="form" action="{{ route('sign-up') }}" method="POST">
+                                @csrf
                                 <div class="mb-3" data-aos="fade-down" data-aos-delay="200">
                                     <input type="email" class="form-control form-control-lg" placeholder="Email"
-                                        aria-label="Email">
+                                        aria-label="Email" name="email">
                                 </div>
                                 <div class="mb-3" data-aos="fade-down" data-aos-delay="200">
                                     <input type="text" class="form-control form-control-lg" placeholder="Username"
-                                        aria-label="Username">
+                                        aria-label="Username" name="username">
                                 </div>
                                 <div class="mb-3" data-aos="fade-down" data-aos-delay="300">
-                                    <input type="password" class="form-control form-control-lg" placeholder="Password"
-                                        aria-label="Password">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Password"
+                                        aria-label="Password" name="password">
                                 </div>
                                 <div class="mb-3" data-aos="fade-down" data-aos-delay="200">
                                     <input type="text" class="form-control form-control-lg" placeholder="Nama lengkap"
-                                        aria-label="Nama lengkap">
+                                        aria-label="Nama lengkap" name="nama_lengkap">
                                 </div>
                                 <div class="mb-3" data-aos="fade-down" data-aos-delay="200">
                                     <input type="text" class="form-control form-control-lg" placeholder="Alamat"
-                                        aria-label="Alamat">
+                                        aria-label="Alamat" name="alamat">
                                 </div>
 
                                 <div class="text-center" data-aos="fade-down" data-aos-delay="500">
-                                    <button type="button"
+                                    <button type="submit"
                                         class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Register</button>
                                 </div>
                             </form>
