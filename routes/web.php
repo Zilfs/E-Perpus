@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PengelolaAuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -33,4 +34,8 @@ Route::middleware(['isPengelola'])->group(function () {
 
 Route::middleware(['isAdmin'])->group(function () {
     Route::resource('/user', UserController::class);
+});
+
+Route::middleware(['isPetugas'])->group(function () {
+    Route::resource('/peminjaman', PeminjamanController::class);
 });
