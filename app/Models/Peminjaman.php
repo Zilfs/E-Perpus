@@ -16,7 +16,8 @@ class Peminjaman extends Model
         'buku_id',
         'tanggal_peminjaman',
         'tanggal_pengembalian',
-        'status_pemijaman',
+        'tanggal_dikembalikan',
+        'status_peminjaman',
     ];
 
     protected $hidden = [];

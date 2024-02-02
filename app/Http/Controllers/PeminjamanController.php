@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Peminjaman;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PeminjamanController extends Controller
@@ -11,7 +13,16 @@ class PeminjamanController extends Controller
      */
     public function index()
     {
-        //
+        $today = Carbon::today();
+        $dipinjam = Peminjaman::where('status_peminjaman', 'DIPINJAM')->get();
+        $dikembalikan = Peminjaman::where([['status_peminjaman', 'DIKEMBALIKAN'], ['tanggal_dikembalikan', $today]])->get();
+        $terlambat = Peminjaman::where([['status_peminjaman', 'DIPINJAM'], ['tanggal_pengembalian', '<', $today]])->get();
+
+        return view('pages.pengelola.peminjaman.index', [
+            'dipinjam' => $dipinjam,
+            'dikembalikan' => $dikembalikan,
+            'terlambat' => $terlambat,
+        ]);
     }
 
     /**
