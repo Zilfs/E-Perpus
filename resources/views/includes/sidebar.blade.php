@@ -39,24 +39,37 @@
                         <span class="nav-link-text ms-1">Buku</span>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link " href="/template/pages/virtual-reality.html">
+            </ul>
+        @endif
+        @if (Auth::user()->role == 'PETUGAS')
+            <ul class="navbar-nav">
+                <li class="nav-item" data-aos="fade-right" data-aos-delay="200">
+                    <a class="nav-link" href="{{ route('user.index') }}">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-app text-info text-sm opacity-10"></i>
+                            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Virtual Reality</span>
+                        <span class="nav-link-text ms-1">Peminjaman</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="/template/pages/rtl.html">
+                <li class="nav-item" data-aos="fade-right" data-aos-delay="400">
+                    <a class="nav-link" href="{{ route('kategori-buku.index') }}">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
+                            <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">RTL</span>
+                        <span class="nav-link-text ms-1">Kategori Buku</span>
                     </a>
-                </li> --}}
+                </li>
+                <li class="nav-item" data-aos="fade-right" data-aos-delay="600">
+                    <a class="nav-link" href="{{ route('buku.index') }}">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Buku</span>
+                    </a>
+                </li>
             </ul>
         @endif
 
