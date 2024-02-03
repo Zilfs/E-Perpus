@@ -16,8 +16,9 @@ class IsPeminjam
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->role == 'PEMINJAM') {
+        if (Auth::user() && Auth::user()->role == 'PEMINJAM') {
             return $next($request);
         }
+        return redirect()->route('login');
     }
 }

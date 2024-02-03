@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Buku;
 use App\Models\KategoriBuku;
+use App\Models\KategoriBukuRelasi;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,6 +16,17 @@ class HomeController extends Controller
 
         return view('pages.peminjam.index', [
             'kategori' => $kategori,
+            'buku' => $buku,
+        ]);
+    }
+
+    public function kategori(String $id)
+    {
+        $data = KategoriBuku::findOrFail($id);
+        $buku = KategoriBukuRelasi::with('kategori', 'buku')->where('kategori_id', $id)->get();
+
+        return view('pages.peminjam.kategori', [
+            'data' => $data,
             'buku' => $buku,
         ]);
     }

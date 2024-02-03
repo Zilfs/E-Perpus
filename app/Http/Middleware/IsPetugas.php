@@ -16,8 +16,9 @@ class IsPetugas
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->role == 'PETUGAS') {
+        if (Auth::user() && Auth::user()->role == 'PETUGAS') {
             return $next($request);
         }
+        return redirect()->route('login');
     }
 }
