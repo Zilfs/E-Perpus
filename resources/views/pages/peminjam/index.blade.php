@@ -15,8 +15,9 @@
         <h3 class="text-black text-center" data-aos="fade-down" data-aos-delay="300">Kategori Buku</h3>
         <hr class="horizontal dark mt-3" data-aos="fade-down" data-aos-delay="350">
         @forelse ($kategori as $item)
-            <a href="" class="col-lg-3 col-md-6 col-12 card bg-primary d-flex flex-column my-4 mx-4"
-                style="height: 200px" data-aos="fade-down" data-aos-delay="450">
+            <a href="{{ route('kategori', $item->id) }}"
+                class="col-lg-3 col-md-6 col-12 card bg-primary d-flex flex-column my-4 mx-4" style="height: 200px"
+                data-aos="fade-down" data-aos-delay="450">
                 <div class="d-flex w-100 h-50 pt-4">
                     <i class="fa-solid fa-book fa-2xl w-100 h-100" style="color: #ffffff;"></i>
                 </div>

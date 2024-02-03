@@ -23,7 +23,7 @@ class HomeController extends Controller
     public function kategori(String $id)
     {
         $data = KategoriBuku::findOrFail($id);
-        $buku = KategoriBukuRelasi::with('kategori', 'buku')->where('kategori_id', $id)->get();
+        $buku = KategoriBukuRelasi::with('buku')->where('kategori_id', $id)->get();
 
         return view('pages.peminjam.kategori', [
             'data' => $data,

@@ -30,10 +30,10 @@
         <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur"
             data-scroll="false">
             <div class="container-fluid py-1 px-3">
-                <div class="d-flex justify-content-center align-items-center">
+                <a href="{{ route('home') }}" class="d-flex justify-content-center align-items-center">
                     <img src="/assets/img/icon.png" alt="" class="w-25 me-3">
                     <h3 class="text-white">E - Perpus</h3>
-                </div>
+                </a>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <ul class="navbar-nav ms-auto justify-content-end">
                         <li class="nav-item dropdown pe-2 d-flex align-items-center">
