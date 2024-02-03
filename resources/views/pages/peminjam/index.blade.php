@@ -6,7 +6,8 @@
         <span class="mask bg-dark opacity-6"></span>
         <div class="d-flex flex-column w-100 h-100 justify-content-center align-items-center position-relative">
             <h2 class="text-white">Welcome</h2>
-            <p class="text-white">Sambut era baru literasi digital bersama kami di Aplikasi E-Perpustakaan. 🎉😁</p>
+            <p class="text-white text-center">Sambut era baru literasi digital bersama kami di Aplikasi E-Perpustakaan. 🎉😁
+            </p>
         </div>
     </div>
     <div class="row my-5 px-5 justify-content-center">
@@ -20,6 +21,26 @@
                 </div>
                 <div class="d-flex h-50 w-100 justify-content-center align-items-center">
                     <h4 class="text-center text-white">{{ $item->nama_kategori }}</h4>
+                </div>
+            </a>
+        @empty
+            <p class="ms-5 text-warning fw-bold">Data Kategori Tidak Ditemukan</p>
+        @endforelse
+
+    </div>
+    <div class="row my-5 px-5 justify-content-center">
+        <h3 class="text-black text-center">Direkomendasikan</h3>
+        <hr class="horizontal dark mt-3">
+        @forelse ($buku as $item)
+            <a href="" class="col-lg-2 col-md-3 col-sm-6 col-12 card bg-gray-100 my-4 mx-4" style="height: 100px">
+                <div class="d-flex w-100 h-100 align-items-center">
+                    <i class="fa-solid fa-book-open fa-2xl" style="color: rgba(0, 0, 0, 0.5)"></i>
+                    <div class="d-flex flex-column ms-3 h-100 justify-content-center mt-3">
+                        <h6 class="text-black text-sm text-break">{{ $item->judul }}
+                        </h6>
+                        <p class="text-xs text-secondary text-break">Oleh: {{ $item->penulis }}</p>
+                    </div>
+
                 </div>
             </a>
         @empty
