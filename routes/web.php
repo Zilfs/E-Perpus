@@ -56,4 +56,5 @@ Route::middleware(['isPeminjam'])->group(function () {
     Route::resource('/ulasan', UlasanController::class);
     Route::get('/koleksi/{id}', [KoleksiController::class, 'index'])->name('koleksi');
     Route::get('/tambah-koleksi/{id}', [KoleksiController::class, 'store'])->name('tambah-koleksi');
+    Route::delete('/hapus-koleksi/{id}', [KoleksiController::class, 'destroy'])->name('hapus-koleksi');
 });

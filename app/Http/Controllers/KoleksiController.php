@@ -25,4 +25,13 @@ class KoleksiController extends Controller
 
         return redirect()->route('koleksi', Auth::user()->id);
     }
+
+    public function destroy(String $id)
+    {
+        $item = KoleksiPribadi::findOrFail($id);
+
+        $item->delete();
+
+        return redirect()->route('koleksi', Auth::user()->id);
+    }
 }
