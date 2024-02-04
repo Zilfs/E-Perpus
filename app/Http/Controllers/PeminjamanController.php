@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Peminjaman;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PeminjamanController extends Controller
 {
@@ -38,7 +39,15 @@ class PeminjamanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Peminjaman::create([
+            'user_id' => Auth::user()->id,
+            'buku_id' => $request->buku_id,
+            'tanggal_peminjaman' => Carbon::today(),
+            'tanggal_pengembalian' => $request->tanggal_pengembalian,
+            'status_peminjaman' => 'DIPINJAM',
+        ]);
+
+        return redirect()->route('dipinjam');
     }
 
     /**
@@ -46,7 +55,11 @@ class PeminjamanController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = Peminjaman::with('buku')->where('user_id', $id)->get();
+
+        return view('pages.peminjam.dipinjam', [
+            'data' => $data,
+        ]);
     }
 
     /**

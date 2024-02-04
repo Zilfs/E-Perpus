@@ -26,8 +26,8 @@
                 <p class="text secondary col-6 text-sm col-md-9">{{ $buku->tahun_terbit }}</p>
             </div>
             <hr class="horizontal dark mt-3">
-            <a href="" class="btn btn-primary w-100" data-bs-toggle="modal"
-                data-bs-target="#pinjamModal{{ $buku->id }} ">Pinjam Buku</a>
+            <a href="" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam
+                Buku</a>
             <a href="" class="btn btn-success w-100">Simpan Ke Koleksi</a>
         </div>
     </div>
@@ -79,34 +79,25 @@
         </div>
     </div>
 
-    <div class="modal fade" id="pinjamModal{{ $buku->id }}" tabindex="-1" aria-labelledby="pinjamModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="pinjamModal" tabindex="-1" aria-labelledby="pinjamModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h6 class="text-lg">Pilih tanggal pengembalian</h6>
-                </div>
-                <div class="modal-body">
-                    <form action="" class="row px-3">
+                <form action="{{ route('pinjam-buku') }}" class="row px-3" method="POST">
+                    @csrf
+                    <div class="modal-header">
+                        <h6 class="text-lg">Pilih tanggal pengembalian</h6>
+                    </div>
+                    <div class="modal-body">
                         <input type="date" class="form-control col-12" name="tanggal_pengembalian">
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                    <a href="" class="btn btn-success">Pinjam</a>
-                </div>
+                        <input type="text" hidden value="{{ $buku->id }}" name="buku_id">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-success">Pinjam</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 @endsection
-
-@push('addon-script')
-    <script src="/ck-editor/ckeditor.js"></script>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#ulasan'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
-@endpush

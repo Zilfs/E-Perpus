@@ -48,4 +48,6 @@ Route::middleware(['isPeminjam'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/kategori/{id}', [HomeController::class, 'kategori'])->name('kategori');
     Route::get('/data-buku/{id}', [HomeController::class, 'buku'])->name('buku');
+    Route::post('/pinjam-buku', [PeminjamanController::class, 'store'])->name('pinjam-buku');
+    Route::get('/dipinjam/{id}', [PeminjamanController::class, 'show'])->name('dipinjam');
 });

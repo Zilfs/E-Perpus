@@ -34,12 +34,6 @@
                                         <span class="text-xs">Tanggal Pengembalian : <span
                                                 class="text-dark ms-sm-2 font-weight-bold">{{ $item->tanggal_pengembalian }}</span></span>
                                     </div>
-                                    <div class="ms-auto text-end">
-                                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                                class="far fa-trash-alt me-2"></i>Delete</a>
-                                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                                class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    </div>
                                 </li>
                             @empty
                                 <p class="ms-5 text-warning fw-bold">Data Tidak Temukan</p>
