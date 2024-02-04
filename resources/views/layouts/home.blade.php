@@ -90,6 +90,7 @@
     <script>
         AOS.init();
     </script>
+    @stack('addon-script')
     <!--   Core JS Files   -->
     <script src="/template/assets/js/core/popper.min.js"></script>
     <script src="/template/assets/js/core/bootstrap.min.js"></script>
