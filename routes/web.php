@@ -5,6 +5,7 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\KoleksiController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PengelolaAuthController;
 use App\Http\Controllers\UlasanController;
@@ -53,4 +54,6 @@ Route::middleware(['isPeminjam'])->group(function () {
     Route::get('/dipinjam/{id}', [PeminjamanController::class, 'show'])->name('dipinjam');
     Route::get('/kembalikan-buku/{id}', [PeminjamanController::class, 'destroy'])->name('kembalikan-buku');
     Route::resource('/ulasan', UlasanController::class);
+    Route::get('/koleksi/{id}', [KoleksiController::class, 'index'])->name('koleksi');
+    Route::get('/tambah-koleksi/{id}', [KoleksiController::class, 'store'])->name('tambah-koleksi');
 });

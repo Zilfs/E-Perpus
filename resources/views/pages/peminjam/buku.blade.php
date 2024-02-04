@@ -28,7 +28,7 @@
             <hr class="horizontal dark mt-3">
             <a href="" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam
                 Buku</a>
-            <a href="" class="btn btn-success w-100">Simpan Ke Koleksi</a>
+            <a href="{{ route('tambah-koleksi', $buku->id) }}" class="btn btn-success w-100">Simpan Ke Koleksi</a>
         </div>
     </div>
     <div class="row my-5 px-3 py-4 justify-content-center card">

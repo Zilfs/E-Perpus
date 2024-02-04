@@ -44,9 +44,15 @@
                             <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4"
                                 aria-labelledby="dropdownMenuButton">
                                 <li class="mb-2">
-                                    <div class="dropdown-item border-radius-md"><a class="btn btn-sm btn-primary"
+                                    <div class="dropdown-item border-radius-md"><a
+                                            class="btn btn-sm btn-primary w-100 mb-0"
                                             href="{{ route('dipinjam', Auth::user()->id) }}">Buku
                                             dipinjam</a></div>
+                                </li>
+                                <li class="mb-2">
+                                    <div class="dropdown-item border-radius-md"><a
+                                            class="btn btn-sm btn-success w-100 mb-0"
+                                            href="{{ route('koleksi', Auth::user()->id) }}">Koleksi</a></div>
                                 </li>
                                 <li class="mb-2">
                                     <div class="dropdown-item border-radius-md" href="">

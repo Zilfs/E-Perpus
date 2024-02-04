@@ -11,7 +11,7 @@ class KoleksiPribadi extends Model
 
     protected $table = 'koleksi_pribadi';
 
-    protected $filable = [
+    protected $fillable = [
         'user_id',
         'buku_id',
     ];
