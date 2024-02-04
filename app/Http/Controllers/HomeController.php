@@ -35,7 +35,7 @@ class HomeController extends Controller
     public function buku(String $id)
     {
         $buku = Buku::findOrFail($id);
-        $ulasan = UlasanBuku::where('buku_id', $id)->get();
+        $ulasan = UlasanBuku::with('user')->where('buku_id', $id)->get();
 
         return view('pages.peminjam.buku', [
             'buku' => $buku,

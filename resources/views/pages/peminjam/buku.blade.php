@@ -32,11 +32,12 @@
         </div>
     </div>
     <div class="row my-5 px-3 py-4 justify-content-center card">
-        <div class="col-12">
-            <h4 class="text-black mb-3">Buat Ulasan</h4>
-            <hr class="horizontal dark mt-3">
-            <div class="row align-items-center bg-gray-100">
-                <form action="">
+        <form action="{{ route('ulasan.store') }}" method="post">
+            @csrf
+            <div class="col-12">
+                <h4 class="text-black mb-3">Buat Ulasan</h4>
+                <hr class="horizontal dark mt-3">
+                <div class="row align-items-center bg-gray-100">
                     <div class="form-group mb-5">
                         <label>Ulasan</label>
                         <textarea id="ulasan" class="form-control" name="ulasan"></textarea>
@@ -45,38 +46,31 @@
                         <label>Rating</label>
                         <input type="number" class="form-control" placeholder="Beri nilai antara 1 - 100" name="rating"
                             min="1" max="100">
+                        <input type="text" value="{{ $buku->id }}" name="buku_id" hidden>
                     </div>
-                </form>
+                </div>
+                <hr class="horizontal dark mt-3">
+                <button type="submit" class="btn btn-primary w-100">Kirim ulasan</button>
             </div>
-            <hr class="horizontal dark mt-3">
-            <a href="" class="btn btn-primary w-100">Kirim ulasan</a>
-        </div>
+        </form>
     </div>
     <div class="row my-5 px-3 py-4 justify-content-center">
         <h4 class="text-black mb-3">Ulasan</h4>
-        <div class="col-12 card py-4 px-4">
-            <h6 class="d-flex align-items-center text-black"><i class="fa fa-user me-sm-1"></i> Orang</h6>
-            <p class="text-secondary text-sm">98 / 100</p>
-            <div class="flex w-100 text-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur maxime quasi
-                deserunt enim rerum, repudiandae, quae earum ipsum vero repellendus optio harum voluptates cupiditate minus
-                quo hic et mollitia ullam at? Minima nam optio reiciendis saepe, consequatur totam doloremque quisquam
-                cumque, exercitationem rerum fugiat impedit delectus dolorem. Suscipit velit unde porro rerum corporis
-                possimus quibusdam maiores praesentium, molestias voluptas, hic iste totam placeat repellat earum sequi
-                quasi minima rem alias perspiciatis? Aliquid aspernatur earum aut, soluta ut dolores reiciendis, temporibus
-                ea culpa ipsa fugit optio porro perspiciatis. Obcaecati nam dolorem necessitatibus odit, illum itaque rem?
-                Itaque voluptate, nisi rerum culpa similique officiis iste, ratione non expedita modi ducimus repellat aut
-                dignissimos, magni earum nihil corrupti doloremque debitis officia repudiandae nam aperiam. Mollitia
-                nesciunt vel qui quas architecto non? Reiciendis quam pariatur omnis eius perspiciatis mollitia culpa,
-                quibusdam ab assumenda quos ipsam illum sed reprehenderit adipisci possimus corrupti aspernatur odio officia
-                quia, maxime aut praesentium vel maiores sapiente. Corporis, magnam dolorem dolorum porro obcaecati,
-                possimus architecto repellendus dignissimos ea hic impedit nostrum aperiam tempore. Animi, error voluptatem,
-                architecto a illum consequuntur tenetur neque iste amet corporis voluptas laborum sint asperiores. Officiis
-                quasi, sint amet ullam aut possimus laborum labore tempora exercitationem?
+        @forelse ($ulasan as $item)
+            <div class="col-12 card py-4 px-4">
+                <h6 class="d-flex align-items-center text-black"><i
+                        class="fa fa-user me-sm-1"></i>{{ $item->user->username }}</h6>
+                <p class="text-secondary text-sm">{{ $item->rating }} / 100</p>
+                <div class="flex w-100 text-break">{{ $item->ulasan }}
+                </div>
+                <div class="d-flex w-100 justify-content-end mt-3 pe-3">
+                    <p class="text-secondary">{{ $item->updated_at }}</p>
+                </div>
             </div>
-            <div class="d-flex w-100 justify-content-end mt-3 pe-3">
-                <p class="text-secondary">22/05/24</p>
-            </div>
-        </div>
+        @empty
+            <p class="ms-5 text-warning fw-bold">Belum ada ulasan</p>
+        @endforelse
+
     </div>
 
     <div class="modal fade" id="pinjamModal" tabindex="-1" aria-labelledby="pinjamModalLabel" aria-hidden="true">
