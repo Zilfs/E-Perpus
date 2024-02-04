@@ -55,7 +55,7 @@ class PeminjamanController extends Controller
      */
     public function show(string $id)
     {
-        $data = Peminjaman::with('buku')->where('user_id', $id)->get();
+        $data = Peminjaman::with('buku')->where([['user_id', $id], ['status_peminjaman', 'DIPINJAM']])->get();
 
         return view('pages.peminjam.dipinjam', [
             'data' => $data,
@@ -83,6 +83,13 @@ class PeminjamanController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $item = Peminjaman::findOrFail($id);
+
+        $item->update([
+            'status_peminjaman' => 'DIKEMBALIKAN',
+            'tanggal_dikembalikan' => Carbon::today(),
+        ]);
+
+        return redirect()->route('dipinjam', Auth::user()->id);
     }
 }

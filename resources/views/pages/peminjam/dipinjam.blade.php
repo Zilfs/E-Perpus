@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="ms-auto text-end">
                                         <a class="btn btn-link text-danger text-gradient px-3 mb-0"
-                                            href="javascript:;">Kembalikan buku</a>
+                                            href="{{ route('kembalikan-buku', $item->id) }}">Kembalikan buku</a>
                                     </div>
                                 </li>
                             @empty
