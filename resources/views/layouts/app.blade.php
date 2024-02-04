@@ -33,6 +33,16 @@
     <script>
         AOS.init();
     </script>
+    <script>
+        function showPassword() {
+            var x = document.getElementById("passwordField");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
     <!--   Core JS Files   -->
     <script src="/template/assets/js/core/popper.min.js"></script>
     <script src="/template/assets/js/core/bootstrap.min.js"></script>
