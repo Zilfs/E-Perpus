@@ -44,6 +44,7 @@ Route::middleware(['isAdmin'])->group(function () {
 
 Route::middleware(['isPetugas'])->group(function () {
     Route::resource('/peminjaman', PeminjamanController::class);
+    Route::get('/data-peminjaman', [PeminjamanController::class, 'show_all'])->name('data-peminjaman');
 });
 
 Route::middleware(['isPeminjam'])->group(function () {

@@ -13,7 +13,7 @@
                         <div class="row">
                             <h6 class="mb-0 col-6">Buku Terpinjam</h6>
                             <div class="col-6 d-flex justify-content-end align-items-end">
-                                <a href="" class="btn btn-primary"><i
+                                <a href="{{ route('data-peminjaman') }}" class="btn btn-primary"><i
                                         class="fa-solid fa-rectangle-list me-2"></i>Lihat
                                     Semua</a>
                             </div>

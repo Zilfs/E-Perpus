@@ -92,4 +92,13 @@ class PeminjamanController extends Controller
 
         return redirect()->route('dipinjam', Auth::user()->id);
     }
+
+    public function show_all()
+    {
+        $data = Peminjaman::with(['user', 'buku'])->get();
+
+        return view('pages.pengelola.peminjaman.show', [
+            'data' => $data,
+        ]);
+    }
 }
