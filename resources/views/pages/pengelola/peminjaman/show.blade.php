@@ -13,7 +13,7 @@
                         <h6 class="w-50">Data Peminjaman</h6>
                         <div class="d-flex justify-content-end w-50">
                             <a href="{{ route('peminjaman.index') }}" class="btn btn-secondary btn-sm me-3">Kembali</a>
-                            <a href="" class="btn btn-success btn-sm"><i
+                            <a href="{{ route('export-data-peminjaman') }}" class="btn btn-success btn-sm"><i
                                     class="fa-solid fa-file-export me-3"></i>Buat
                                 Laporan</a>
                         </div>

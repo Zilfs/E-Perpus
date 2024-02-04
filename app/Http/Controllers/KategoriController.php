@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\KategoriExport;
 use App\Models\KategoriBuku;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class KategoriController extends Controller
 {
@@ -82,5 +84,10 @@ class KategoriController extends Controller
         $item->delete();
 
         return redirect()->route('kategori-buku.index');
+    }
+
+    public function export()
+    {
+        return Excel::download(new KategoriExport, 'laporan-data-kategori.xlsx');
     }
 }

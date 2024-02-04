@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\BukuExport;
 use App\Models\Buku;
 use App\Models\KategoriBuku;
 use App\Models\KategoriBukuRelasi;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BukuController extends Controller
 {
@@ -101,5 +103,10 @@ class BukuController extends Controller
         $item->delete();
 
         return redirect()->route('buku.index');
+    }
+
+    public function export()
+    {
+        return Excel::download(new BukuExport, 'laporan-data-buku.xlsx');
     }
 }

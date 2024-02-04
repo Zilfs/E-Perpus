@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PeminjamanExport;
 use App\Models\Peminjaman;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PeminjamanController extends Controller
 {
@@ -100,5 +102,10 @@ class PeminjamanController extends Controller
         return view('pages.pengelola.peminjaman.show', [
             'data' => $data,
         ]);
+    }
+
+    public function export()
+    {
+        return Excel::download(new PeminjamanExport, 'laporan-data-peminjaman.xlsx');
     }
 }

@@ -36,15 +36,19 @@ Route::middleware(['isPengelola'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/kategori-buku', KategoriController::class);
     Route::resource('/buku', BukuController::class);
+    Route::get('/export-data-kategori', [kategoriController::class, 'export'])->name('export-data-kategori');
+    Route::get('/export-data-buku', [BukuController::class, 'export'])->name('export-data-buku');
 });
 
 Route::middleware(['isAdmin'])->group(function () {
     Route::resource('/user', UserController::class);
+    Route::get('/export-data-user', [UserController::class, 'export'])->name('export-data-user');
 });
 
 Route::middleware(['isPetugas'])->group(function () {
     Route::resource('/peminjaman', PeminjamanController::class);
     Route::get('/data-peminjaman', [PeminjamanController::class, 'show_all'])->name('data-peminjaman');
+    Route::get('/export-data-peminjaman', [PeminjamanController::class, 'export'])->name('export-data-peminjaman');
 });
 
 Route::middleware(['isPeminjam'])->group(function () {
