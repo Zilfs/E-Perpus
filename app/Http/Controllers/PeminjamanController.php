@@ -61,6 +61,7 @@ class PeminjamanController extends Controller
 
         return view('pages.peminjam.dipinjam', [
             'data' => $data,
+            'today' => Carbon::today(),
         ]);
     }
 
