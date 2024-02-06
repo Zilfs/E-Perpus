@@ -59,7 +59,7 @@
         @forelse ($ulasan as $item)
             <div class="col-12 card py-4 px-4">
                 <h6 class="d-flex align-items-center text-black"><i
-                        class="fa fa-user me-sm-1"></i>{{ $item->user->username }}</h6>
+                        class="fa fa-user me-sm-1 me-2"></i>{{ $item->user->username }}</h6>
                 <p class="text-secondary text-sm">{{ $item->rating }} / 100</p>
                 <div class="flex w-100 text-break">{{ $item->ulasan }}
                 </div>

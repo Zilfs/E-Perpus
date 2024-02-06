@@ -13,7 +13,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $buku_terpinjam = Peminjaman::where('status_peminjaman', 'TERPINJAM')->get()->count();
+        $buku_terpinjam = Peminjaman::where('status_peminjaman', 'DIPINJAM')->get()->count();
         $jumlah_buku = Buku::all()->count();
         $kategori_buku = KategoriBuku::all()->count();
         $jumlah_pembaca = User::where('role', 'PEMINJAM')->get()->count();

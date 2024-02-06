@@ -49,7 +49,7 @@ class PeminjamanController extends Controller
             'status_peminjaman' => 'DIPINJAM',
         ]);
 
-        return redirect()->route('dipinjam');
+        return redirect()->route('dipinjam', Auth::user()->id);
     }
 
     /**
