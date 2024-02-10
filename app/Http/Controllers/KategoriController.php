@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exports\KategoriExport;
 use App\Models\KategoriBuku;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -86,8 +87,18 @@ class KategoriController extends Controller
         return redirect()->route('kategori-buku.index');
     }
 
-    public function export()
+    public function export_excel()
     {
         return Excel::download(new KategoriExport, 'laporan-data-kategori.xlsx');
+    }
+
+    public function export_pdf()
+    {
+        $data = KategoriBuku::all();
+        $pdf = Pdf::loadView('export.kategori', [
+            'data' => $data,
+        ]);
+
+        return $pdf->download('laporan-data-kategori.pdf');
     }
 }

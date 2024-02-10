@@ -18,7 +18,8 @@
                                             class="fa fa-solid fa-plus me-3"></i>Tambah Data Kategori Buku</a>
                                 </div>
                                 <div class="col-12 col-md-6">
-                                    <a href="{{ route('export-data-kategori') }}" class="btn btn-success btn-sm w-100"><i
+                                    <a href="{{ route('export-data-kategori-pdf') }}"
+                                        class="btn btn-success btn-sm w-100"><i
                                             class="fa-solid fa-file-export me-3"></i>Buat
                                         Laporan</a>
                                 </div>

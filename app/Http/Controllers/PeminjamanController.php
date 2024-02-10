@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exports\PeminjamanExport;
 use App\Models\Peminjaman;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -105,8 +106,17 @@ class PeminjamanController extends Controller
         ]);
     }
 
-    public function export()
+    public function export_excel()
     {
         return Excel::download(new PeminjamanExport, 'laporan-data-peminjaman.xlsx');
+    }
+
+    public function export_pdf()
+    {
+        $data = Peminjaman::with(['user', 'buku'])->get();
+        $pdf = Pdf::loadView('export.peminjaman', [
+            'data' => $data,
+        ]);
+        return $pdf->download('laporan-peminjaman.pdf');
     }
 }

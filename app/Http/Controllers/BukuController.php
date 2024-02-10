@@ -6,6 +6,7 @@ use App\Exports\BukuExport;
 use App\Models\Buku;
 use App\Models\KategoriBuku;
 use App\Models\KategoriBukuRelasi;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -105,8 +106,18 @@ class BukuController extends Controller
         return redirect()->route('buku.index');
     }
 
-    public function export()
+    public function export_excel()
     {
         return Excel::download(new BukuExport, 'laporan-data-buku.xlsx');
+    }
+
+    public function export_pdf()
+    {
+        $data = Buku::all();
+        $pdf = Pdf::loadView('export.buku', [
+            'data' => $data
+        ]);
+
+        return $pdf->download('laporan-data-buku.pdf');
     }
 }
