@@ -28,7 +28,7 @@ class PengelolaAuthController extends Controller
             }
         }
 
-        return redirect()->route('login-pengelola');
+        return redirect()->route('login-pengelola')->with('login-failed', 'email atau password salah !!');
     }
 
     public function logout(Request $request)
