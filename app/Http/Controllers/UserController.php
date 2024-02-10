@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exports\UserExport;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -92,8 +93,19 @@ class UserController extends Controller
         return redirect()->route('user.index');
     }
 
-    public function export()
+    public function export_excel()
     {
         return Excel::download(new UserExport, 'laporan-data-user.xlsx');
+    }
+
+
+    public function export_pdf()
+    {
+        $data = User::all();
+        $pdf = Pdf::loadView('export.user', [
+            'data' => $data
+        ]);
+
+        return $pdf->download('laporan-data-user.pdf');
     }
 }

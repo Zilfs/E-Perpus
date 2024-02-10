@@ -15,7 +15,7 @@
                             <div class="row w-100 justify-content-end">
                                 <div class="col-12 col-md-6"><a href="{{ route('peminjaman.index') }}"
                                         class="btn btn-secondary btn-sm w-100">Kembali</a></div>
-                                <div class="col-12 col-md-6"><a href="{{ route('export-data-peminjaman') }}"
+                                <div class="col-12 col-md-6"><a href="{{ route('export-data-peminjaman-pdf') }}"
                                         class="btn btn-success btn-sm w-100"><i class="fa-solid fa-file-export"></i>Buat
                                         Laporan</a></div>
                             </div>
