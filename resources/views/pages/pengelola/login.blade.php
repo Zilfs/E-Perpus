@@ -12,6 +12,11 @@
                             <h4 class="font-weight-bolder" data-aos="fade-down">Sign In</h4>
                             <p class="mb-5" data-aos="fade-down" data-aos-delay="100">Selamat datang 🎉, Login dan kelola
                                 koleksi dan layanan perpustakaan dengan lebih efisien</p>
+                            @if (session()->has('login-failed'))
+                                <div class="alert alert-danger text-white ms-0 fs-bold mb-0" data-aos="fade-in">
+                                    {{ session()->get('login-failed') }}
+                                </div>
+                            @endif
                         </div>
                         <div class="card-body">
                             <form role="form" action="{{ route('authenticate-pengelola') }}" method="POST">

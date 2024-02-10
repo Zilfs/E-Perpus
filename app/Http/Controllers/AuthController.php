@@ -45,7 +45,7 @@ class AuthController extends Controller
                 return redirect()->route('home');
             }
         }
-        return redirect()->route('login');
+        return redirect()->route('login')->with('login-failed', 'email atau password salah !!');
     }
 
     public function logout(Request $request)
